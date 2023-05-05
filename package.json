@@ -1,7 +1,7 @@
 {
   "name": "cc_exercise_template",
   "version": "1.0.0",
-  "description": "",
+  "description": "Welcome! This repo contains all the information you need to complete __exercise-name__ aswell as some helpful tips and commands",
   "main": "index.js",
   "scripts": {
     "test": "jest"

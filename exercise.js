@@ -32,6 +32,30 @@ So twas better Betty Botterbought a bit of better butter.`;
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const challengeOne = (letters) => {
   /* Only make changes below this comment */
+
+  const wordsArray = text.split(/[.,\n\s]+/g) //Separating text into words ignoring points, commas and linebreaks
+  wordsArray.pop() //Ignoring last empty array
+
+  const wordsArrayLength = wordsArray.length //length of the array of words for a loop
+
+  const lettersArrayLength = letters.length //length of the array of input letters for a loop
+  let answerObject = {} //empty object to contain the answer
+
+  letters.forEach(element => {
+    answerObject[element] = [] //creating the objects which keys are the input letters
+  })
+  for (i=0; i<lettersArrayLength; i++){ //iterating through every input letter...
+    for (j=0; j<wordsArrayLength;j++){ //iterating through every word in the array created from the text
+      if (letters[i].toLowerCase()===wordsArray[j][0].toLowerCase()){ //if an input letter matches the first letter of the word array...
+        answerObject[letters[i]].push(wordsArray[j]) // Pushing the words to the answer array
+      }
+    }
+    answerObject[letters[i]]=[...new Set(answerObject[letters[i]])] //deleting duplicated elements in the anser
+  }
+
+  return answerObject
+
+
   /* Only make changes below this comment */
 };
 
