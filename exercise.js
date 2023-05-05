@@ -30,9 +30,9 @@ and she baked it in her batter, and the batter was not bitter.
 So twas better Betty Botterbought a bit of better butter.`;
 
 /** DO NOT CHANGE THE FUNCTION NAME **/
-const challengeOne = (text, letters) => {
+const challengeOne = (letters) => {
   /* Only make changes below this comment */
-  const splittedText = text.split(" ");
+  let splittedText = text.split(" ");
   let resultingWords = [];
   const lowerCaseLetters = letters.map((letter) => letter.toLowerCase());
   const upperCaseLetters = letters.map((letter) => letter.toUpperCase());
@@ -53,7 +53,7 @@ const challengeOne = (text, letters) => {
   /* Only make changes below this comment */
 };
 
-challengeOne(text, ["S", "B"]);
+challengeOne(["S", "B"]);
 
 /** DO NOT CHANGE THE LINE BELOW **/
 module.exports.challengeOne = challengeOne;
