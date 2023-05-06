@@ -32,6 +32,23 @@ So twas better Betty Botterbought a bit of better butter.`;
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const challengeOne = (letters) => {
   /* Only make changes below this comment */
+  const result = {};
+  const textSplit = text.replace(/\./g,'').replace(/\,/g,'').replace(/(\r\n|\n|\r)/gm, "").split(" ");
+  console.log(textSplit);
+  textSplit.forEach((word) => {
+    const [firstLetter] = word;
+    const fisrtLetterLowerCase = firstLetter.toLowerCase();
+    if (letters.includes(fisrtLetterLowerCase)) {
+      if (!result[fisrtLetterLowerCase]) {
+        result[fisrtLetterLowerCase] = [word];
+      } else if (!result[fisrtLetterLowerCase].includes(word)) {
+        result[fisrtLetterLowerCase].push(word);
+
+      }
+    }
+  });
+
+  return result;
   /* Only make changes below this comment */
 };
 
