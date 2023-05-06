@@ -32,6 +32,18 @@ So twas better Betty Botterbought a bit of better butter.`;
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const challengeOne = (letters) => {
   /* Only make changes below this comment */
+  const result = {};
+  const textSplit = text.split(/[ ,.\n]+/);
+
+  for (const letter of letters) {
+    const value = textSplit.filter(
+      (str) => str.charAt(0).toLowerCase() === letter.toLowerCase()
+    );
+    const val = [...new Set(value)];
+    result[letter] = val;
+  }
+
+  return result;
   /* Only make changes below this comment */
 };
 
