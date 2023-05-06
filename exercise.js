@@ -41,6 +41,11 @@ const challengeOne = (letters) => {
   ]);
 
   options.forEach((option, index) => {
+    // Initialize an empty array for the letter if it doesn't exist
+    if (!resultingWords[letters[index]]) {
+      resultingWords[letters[index]] = [];
+    }
+
     splittedText.forEach((word) => {
       if (word.startsWith(option[0]) || word.startsWith(option[1])) {
         if (!resultingWords[letters[index]].includes(word)) {
