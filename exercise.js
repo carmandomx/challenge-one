@@ -32,28 +32,29 @@ So twas better Betty Botterbought a bit of better butter.`;
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const challengeOne = (letters) => {
   /* Only make changes below this comment */
-  let splittedText = text.split(" ");
-  let resultingWords = [];
-  const lowerCaseLetters = letters.map((letter) => letter.toLowerCase());
-  const upperCaseLetters = letters.map((letter) => letter.toUpperCase());
 
-  for (let i = 0; i < splittedText.length; i++) {
-    const firstLetter = splittedText[i][0];
+  let splittedText = text.split(/\W+/);
+  let resultingWords = {};
+  const options = letters.map((letter) => [
+    letter.toUpperCase(),
+    letter.toLowerCase(),
+  ]);
 
-    if (
-      lowerCaseLetters.includes(firstLetter) ||
-      upperCaseLetters.includes(firstLetter)
-    ) {
-      resultingWords.push(splittedText[i]);
-    } else {
-      continue;
-    }
-  }
+  options.forEach((option, index) => {
+    splittedText.forEach((word) => {
+      if (word.startsWith(option[0]) || word.startsWith(option[1])) {
+        if (!resultingWords[letters[index]].includes(word)) {
+          resultingWords[letters[index]].push(word);
+        }
+      }
+    });
+  });
   console.log(resultingWords);
-  /* Only make changes below this comment */
+  return resultingWords;
 };
+/* Only make changes below this comment */
 
-challengeOne(["S", "B"]);
+challengeOne(["s", "A"]);
 
 /** DO NOT CHANGE THE LINE BELOW **/
 module.exports.challengeOne = challengeOne;
