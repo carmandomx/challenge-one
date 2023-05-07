@@ -33,7 +33,7 @@ So twas better Betty Botterbought a bit of better butter.`;
 const challengeOne = (letters) => {
   /* Only make changes below this comment */
     const words = text.split(/\s+/); //Saving text in an array called words and delimited by spaces and newlines
-    let wordsWithoutComas = words.map(word => word.replace(/[^\w\s]|_/g, "")); //eliminating commas and punctuation from the words using regex for punctuation targeting
+    const wordsWithoutComas = words.map(word => word.replace(/[^\w\s]|_/g, "")); //eliminating commas and punctuation from the words using regex for punctuation targeting
     const result = {};
   
     for (const letter of letters) {
