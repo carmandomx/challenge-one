@@ -32,7 +32,28 @@ So twas better Betty Botterbought a bit of better butter.`;
 /** DO NOT CHANGE THE FUNCTION NAME **/
 const challengeOne = (letters) => {
   /* Only make changes below this comment */
-  /* Only make changes below this comment */
+    const words = text.split(/\s+/); //Saving text in an array called words and delimited by spaces and newlines
+    const wordsWithoutComas = words.map(word => word.replace(/[^\w\s]|_/g, "")); //eliminating commas and punctuation from the words using regex for punctuation targeting
+    const result = {};
+  
+    for (const letter of letters) {
+      const wordWithLetter = wordsWithoutComas.filter((word) => {
+        if(word.startsWith(letter) || word.startsWith(letter.toUpperCase()) ){  //Conditional to find uppercase cases
+          return word;
+        }
+      });
+      const deleteDuplicates = new Set(wordWithLetter); //deleting duplicating words building a new set object and saving it in a final array
+      const arrayWords = Array.from(deleteDuplicates);
+        
+        if (arrayWords.length > 0) {
+          result[letter] = arrayWords;
+        }
+    
+    
+  
+  };
+  return result;
+
 };
 
 /** DO NOT CHANGE THE LINE BELOW **/
